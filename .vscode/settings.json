@@ -1,0 +1,16 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontSize": 16,
+  "window.zoomLevel": 1.0,
+  "editor.wordWrap": "on",
+  "git.enableSmartCommit": true,
+  "workbench.colorTheme": "Huacat Pink Theme",
+  "vue.updateImportsOnFileMove.enabled": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": false
+}

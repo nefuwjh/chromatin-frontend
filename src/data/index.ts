@@ -202,7 +202,15 @@ export const xiaomai1 = [
     Prob: 0.17920586466789246,
     reslut: '否'
   },
-  {},
+  {
+    //测试
+    Chr: '1A',
+    Start: 33189,
+    End: 33978,
+    Length: 789,
+    Prob: 0.17920586466789246,
+    reslut: '否'
+  },
   {},
   {},
   {},

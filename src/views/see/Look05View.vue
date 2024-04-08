@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
 import { onMounted, ref } from 'vue'
-import Look01View from './Look01View.vue'
 const echartsInstance = ref<echarts.ECharts | null>(null)
 const boxRef1 = ref<HTMLDivElement | null>(null)
 onMounted(() => {
@@ -16,7 +15,7 @@ onMounted(() => {
       title: {
         text: 'DNase-seq',
         left: 'center'
-    },
+      },
       grid: {
         width: '68%', // 设置图表宽度为容器宽度的70%
         height: '65%', // 设置图表高度为容器高度的70%
@@ -74,7 +73,7 @@ onMounted(() => {
   display: inline-block;
   background-color: white;
   border-radius: 3%;
-  border: 1px solid  #ccc; /* 灰色边框 */
+  border: 1px solid #ccc; /* 灰色边框 */
   transition: box-shadow 0.3s; /* 添加过渡效果 */
 }
 .echart-box:hover {

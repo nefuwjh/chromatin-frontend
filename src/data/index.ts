@@ -203,7 +203,7 @@ export const xiaomai1 = [
     reslut: '否'
   },
   {
-    //测试
+    //测试。。。
     Chr: '1A',
     Start: 33189,
     End: 33978,

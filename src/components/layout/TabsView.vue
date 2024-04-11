@@ -93,10 +93,9 @@ p {
   top: 50px;
   left: 50px;
   /* border: 1px solid red; */
-  height: 240px;
 }
 .demo-tabs {
-  background-color: #eff6ff;
+  background-color: #c8dffc;
   border-radius: 17px;
   left: 0px;
   top: 0px;
@@ -109,13 +108,11 @@ p {
   height: 100px;
   width: 100px;
   border-radius: 100px;
-  box-shadow: 0px 0px 20px rgb(255, 255, 255);
+  box-shadow: 0px 0px 20px #162d81db;
 }
 .demo-tabs div {
   display: flex;
   margin: 10px;
-  color: #fff;
-  /* border: 1px solid red; */
 }
 /* 去除灰色横条 */
 ::v-deep .el-tabs__nav-wrap::after {
@@ -135,6 +132,7 @@ p {
 ::v-deep .el-tabs__item.is-active {
   color: #ffffff !important;
   z-index: 2;
+  /* border: 1px solid red; */
 }
 /* 设置未被选中样式 */
 ::v-deep .el-tabs__item {

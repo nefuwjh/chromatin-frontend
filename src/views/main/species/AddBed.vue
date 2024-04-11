@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Plus } from '@element-plus/icons-vue'
-import { listSpeciesPart, listSpecies } from '@/data'
-import type { PredictionBed } from '@/type'
+import { listSpeciesPart, listSpecies, listPredictionResults,tableData } from '@/data'
+import type { PredictionBed,PredictioInfo } from '@/type'
 const dialogFormVisible = ref(false)
 const openDialogF = async () => {
   dialogFormVisible.value = true
@@ -52,13 +52,25 @@ const activeF = () => {
     bedFileR.value?.click()
   })
 }
+
+const prediction = ref<PredictioInfo>({spid:'',id:'',sequence:'',count:0,desc:'',status:0})
+
+const submitF = () => {
+  prediction.value.spid = 'yumi'
+  prediction.value.status = 0
+  prediction.value.id = '1598746215698841328'
+  // prediction.value.sequence = prediction.value.spid + '_' + prediction.value.part + '_' + 
+  tableData.unshift(JSON.parse(JSON.stringify(prediction.value)))
+  console.log(tableData)
+}
+console.log(tableData)
 </script>
 <template>
-  <div>
+  <!-- <div> -->
     <el-button type="primary" @click="openDialogF" :icon="Plus" />
-    <el-dialog v-model="dialogFormVisible" title="添加" width="40%">
-      <p style="margin-bottom: 10px">说明：</p>
-      <el-form style="max-width: 300px">
+    <el-dialog v-model="dialogFormVisible" title="ADD" width="40%" class="add-form">
+      <!-- <p style="margin-bottom: 10px">说明：</p> -->
+      <el-form class="form">
         <el-form-item>
           <el-select v-model="bedInfoR.name" placeholder="Select" size="large">
             <el-option
@@ -85,17 +97,26 @@ const activeF = () => {
             type="textarea"
             placeholder="Please input" />
         </el-form-item>
-        <el-form-item>
-          <el-button @click="activeF" type="primary">文件</el-button>
-          <br />
-          <span>共：{{ bedFileInfoR.lines }} / 包含：{{ bedFileInfoR.gens }}</span>
+        <el-form-item style="border: 1px red solid;">
+          <el-button @click="activeF" type="primary" style="width: 500px">Select Your File</el-button>
+          <br/>
+          <div>your file：{{ bedFileInfoR.lines }} lines / chr：{{ bedFileInfoR.gens }}</div>
           <input type="file" ref="bedFileR" hidden @change="changeF" />
         </el-form-item>
         <el-form-item>
-          <el-button type="success">提交</el-button>
+          <el-button type="success" style="width: 500px;" @click="submitF">Submit</el-button>
         </el-form-item>
       </el-form>
     </el-dialog>
-  </div>
+  <!-- </div> -->
 </template>
-@/type
+<style>
+
+.add-form {
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 25px 45px black;
+  width: 500px;
+}
+
+</style>

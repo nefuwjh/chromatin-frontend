@@ -16,7 +16,7 @@ import Look07View from './see/Look07View.vue'
       <el-col :span="16" class="my-col">
         <h1>PlantOCR</h1>
       </el-col>
-      <el-col :span="2" class="my-col btn">Help</el-col>
+      <!-- <el-col :span="2" class="my-col btn">Help</el-col> -->
       <el-col :span="2" class="my-col">
         <LoginView />
       </el-col>
@@ -55,4 +55,8 @@ import Look07View from './see/Look07View.vue'
     </el-row>
   </main>
 </template>
-<style scoped></style>
+<style scoped>
+.my-row {
+  background-color: #06c6bf;
+}
+</style>

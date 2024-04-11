@@ -4,8 +4,22 @@ import { Search } from '@element-plus/icons-vue'
 import AddBed from './AddBed.vue'
 import { listPredictionResults } from '@/data'
 import { showDistributeDialog } from './distribute'
+import { useRoute } from 'vue-router'
+import { ref, watch } from 'vue'
 
-const results = listPredictionResults()
+const route = useRoute()
+
+const resultsR = ref<PredictioInfo[]>([])
+
+watch(
+  route,
+  () => {
+    resultsR.value =  listPredictionResults().filter((item) => item.spid === route.params.spid)
+  },
+  { immediate: true }
+)
+console.log(listPredictionResults())
+
 </script>
 <template>
   <el-row class="my-row">
@@ -14,7 +28,7 @@ const results = listPredictionResults()
       <el-input style="width: 240px" placeholder="Type something" :prefix-icon="Search" />
     </el-col>
     <el-col>
-      <el-table :data="results">
+      <el-table :data="resultsR">
         <el-table-column type="index" label="#" width="50" />
         <el-table-column label="序号" prop="sequence" />
         <el-table-column label="个数">
@@ -42,4 +56,3 @@ const results = listPredictionResults()
     </el-col>
   </el-row>
 </template>
-@/type

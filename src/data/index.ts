@@ -1,11 +1,43 @@
 import type { PredictioInfo } from '@/type'
 
-export const listSpecies = () => [{ name: '玉米', sname: 'yumi' }]
+export const listSpecies = () => [
+  {name: 'Hordeum_vulgare', sname: 'damai'},
+  {name: 'Triticum_aestivum', sname: 'xiaomai'},
+  {name: 'Sorghum_bicolor', sname: 'gaoliang'},
+  {name: 'Zea_mays', sname: 'yumi'},
+  {name: 'Oryza_sativa', sname: 'shuidao'},
+  {name: 'Solanum_lycopersicum', sname: 'fanqie'},
+  {name: 'Arabidopsis_thaliana', sname: 'ninanjie'}
+ ]
 
 export const listSpeciesPart = () => [
   {
     name: 'root',
     sname: 'root'
+  },
+  {
+    name: 'leaf',
+    sname: 'leaf'
+  },
+  {
+    name: 'stem',
+    sname: 'stem'
+  },
+  {
+    name: 'flower',
+    sname: 'flower'
+  },
+  {
+    name: 'fruit',
+    sname: 'fruit'
+  },
+  {
+    name: 'embryo',
+    sname: 'embryo'
+  },
+  {
+    name: 'seedling',
+    sname: 'seedling'
   }
 ]
 
@@ -34,22 +66,25 @@ export const look02 = () => [
     { value: 1230, name: 'WH4' }
   ]
 ]
-const tableData: PredictioInfo[] = [
+export const tableData: PredictioInfo[] = [
   {
+    spid: 'yumi',
     id: '1598746215698745318',
     sequence: 'yumi_root_2024-03-03T12:21:14',
     count: 5,
     desc: '疾病',
-    status: 0
+    status: 1
   },
   {
+    spid: 'yumi',
     id: '1598746215698745328',
     sequence: 'yumi_root_2024-03-03T12:21:14',
     count: 5,
     desc: '疾病',
-    status: 0
+    status: 1
   },
   {
+    spid: 'yumi',
     id: '1598746215698741328',
     sequence: 'yumi_root_2024-03-03T12:21:14',
     count: 5,
@@ -57,8 +92,169 @@ const tableData: PredictioInfo[] = [
     status: 1
   },
   {
+    spid: 'yumi',
     id: '1598746215698841328',
     sequence: 'yumi_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'yumi',
+    id: '1598746215698841328',
+    sequence: 'yumi_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'yumi',
+    id: '1598746215698841328',
+    sequence: 'yumi_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'yumi',
+    id: '1598746215698841328',
+    sequence: 'yumi_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'yumi',
+    id: '1598746215698841328',
+    sequence: 'yumi_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'yumi',
+    id: '1598746215698841328',
+    sequence: 'yumi_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'yumi',
+    id: '1598746215698841328',
+    sequence: 'yumi_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
+    id: '1598746215698745318',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
+    id: '1598746215698745328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
+    id: '1598746215698741328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
+    id: '1598746215698841328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
+    id: '1598746215698841328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
+    id: '1598746215698841328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
+    id: '1598746215698841328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
     count: 5,
     desc: '疾病',
     status: 1

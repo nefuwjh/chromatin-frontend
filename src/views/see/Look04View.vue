@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
 import { onMounted, ref } from 'vue'
-import Look01View from './Look01View.vue'
 const echartsInstance = ref<echarts.ECharts | null>(null)
 const boxRef1 = ref<HTMLDivElement | null>(null)
 onMounted(() => {
@@ -16,7 +15,7 @@ onMounted(() => {
       title: {
         text: 'MNase-seq',
         left: 'center'
-    },
+      },
       grid: {
         width: '68%', // 设置图表宽度为容器宽度的70%
         height: '65%', // 设置图表高度为容器高度的70%

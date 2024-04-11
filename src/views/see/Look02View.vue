@@ -2,8 +2,7 @@
 import * as echarts from 'echarts'
 import { onMounted, ref } from 'vue'
 import { look02 } from '@/data/index'
-import { ArrowLeft, ArrowRight } from '@element-plus/icons-vue'
-import type internal from 'stream'
+
 const echartsInstance = ref<echarts.ECharts | null>(null)
 const boxRef2 = ref<HTMLDivElement | null>(null)
 
@@ -91,9 +90,9 @@ onMounted(() => {
 })
 
 //定时器
-setInterval(() => {
-  dataIndex.value = (dataIndex.value + 1) % dataSets.length
-}, 3000)
+// setInterval(() => {
+//   dataIndex.value = (dataIndex.value + 1) % dataSets.length
+// }, 3000)
 </script>
 
 <template>

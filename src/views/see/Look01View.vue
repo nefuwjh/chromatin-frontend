@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
 import { onMounted, ref } from 'vue'
-import Look01View from './Look01View.vue'
 const echartsInstance = ref<echarts.ECharts | null>(null)
 const boxRef1 = ref<HTMLDivElement | null>(null)
 onMounted(() => {
@@ -26,6 +25,9 @@ onMounted(() => {
           restore: {},
           saveAsImage: {}
         }
+      },
+      tooltip: {
+        trigger: 'item'
       },
       xAxis: {
         type: 'category',

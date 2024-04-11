@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const tabPosition = ref('top')
-
 import type { TabsPaneContext } from 'element-plus'
 
 const activeName = ref('first')
@@ -13,7 +11,7 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
 </script>
 <template>
   <div id="tabs">
-    <el-tabs v-model="activeName" stretch="true" class="demo-tabs" @tab-click="handleClick">
+    <el-tabs v-model="activeName" stretch class="demo-tabs" @tab-click="handleClick">
       <el-tab-pane
         label="Hordeum vulgare
             "

@@ -14,13 +14,19 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
 <template>
   <div id="tabs">
     <el-tabs v-model="activeName" stretch="true" class="demo-tabs" @tab-click="handleClick">
-      <el-tab-pane label="Hordeum vulgare
-            " name="first">
+      <el-tab-pane
+        label="Hordeum vulgare
+            "
+        name="first">
         <div>
           <img src="@/assets/damai.jpg" alt="" />
           <p>
-            (Hordeum vulgare
-            L.) &nbsp is an annual herb of the gramineous family barley. Culm stout, smooth hairless, erect; Leaf sheath loosely pedicellate, much glabrous or base pilose; Leaf tongue membranous, leaf flat, spike, spikelet dense, each segment bearing three developed spikelet, spikelet are sessile; Glume linear-lanceolate, outer pubescent; The caryopsis adheres to the lemma when ripe, and does not protrude. It is mainly divided into two varieties of highland barley and Tibetan highland barley.
+            (Hordeum vulgare L.) &nbsp is an annual herb of the gramineous family barley. Culm
+            stout, smooth hairless, erect; Leaf sheath loosely pedicellate, much glabrous or base
+            pilose; Leaf tongue membranous, leaf flat, spike, spikelet dense, each segment bearing
+            three developed spikelet, spikelet are sessile; Glume linear-lanceolate, outer
+            pubescent; The caryopsis adheres to the lemma when ripe, and does not protrude. It is
+            mainly divided into two varieties of highland barley and Tibetan highland barley.
           </p>
         </div>
         <router-link to="/barley"></router-link>
@@ -29,7 +35,11 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         <div>
           <img src="@/assets/xiaomai.jpg" alt="" />
           <p>
-            (Triticum aestivum L.) &nbsp is an annual or annual herb of the grass family, wheat family. [53] The culms are erect, tufted, up to 100 cm tall, loosely sheathed, membranous, and long lanceolate. Spikelet erect, spikelet containing many small flowers, glume oval, lemma long round lanceolate, lemma several lengths to lemma. Fruit period May to July.
+            (Triticum aestivum L.) &nbsp is an annual or annual herb of the grass family, wheat
+            family. [53] The culms are erect, tufted, up to 100 cm tall, loosely sheathed,
+            membranous, and long lanceolate. Spikelet erect, spikelet containing many small flowers,
+            glume oval, lemma long round lanceolate, lemma several lengths to lemma. Fruit period
+            May to July.
           </p>
         </div>
         <router-link to="/barley"></router-link>
@@ -38,7 +48,13 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         <div>
           <img src="@/assets/gaoliang.jpg" alt="" />
           <p>
-            (Sorghum bicolor (L.) Moench) &nbsp is a tall annual herb. Culm highly uneven, [10] stout, erect, base segment with supporting roots; Leaves broad and long, leaf sheath glabrous or slightly white powder; Lingual dural, apex rounded, margin ciliated; Leaf blade linear to linear-lanceolate, base round or slightly auricular, surface dark green; The panicle is loose; Both glumes are leathery, caryopsis are both plain convex, yellow-green at first, dark brown at maturity; Style separated, stigma brushlike. Fruit period 6-9 months.
+            (Sorghum bicolor (L.) Moench) &nbsp is a tall annual herb. Culm highly uneven, [10]
+            stout, erect, base segment with supporting roots; Leaves broad and long, leaf sheath
+            glabrous or slightly white powder; Lingual dural, apex rounded, margin ciliated; Leaf
+            blade linear to linear-lanceolate, base round or slightly auricular, surface dark green;
+            The panicle is loose; Both glumes are leathery, caryopsis are both plain convex,
+            yellow-green at first, dark brown at maturity; Style separated, stigma brushlike. Fruit
+            period 6-9 months.
           </p>
         </div>
         <router-link to="/barley"></router-link>
@@ -47,7 +63,11 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         <div>
           <img src="@/assets/yumi.jpg" alt="" />
           <p>
-            (Zea mays) &nbsp  is an annual herbaceous crop. Genetically modified corn: Sweet and crisp. Maize is a root crop, and the underground node is the main part of the root system, which is deeper into the soil. The stem is composed of nodes and internodes and is cylindrical with hard organization. Maize leaf consists of leaves and leaf sheath. Inflorescence monoecious; The seeds are often yellow, white, and purple.
+            (Zea mays) &nbsp is an annual herbaceous crop. Genetically modified corn: Sweet and
+            crisp. Maize is a root crop, and the underground node is the main part of the root
+            system, which is deeper into the soil. The stem is composed of nodes and internodes and
+            is cylindrical with hard organization. Maize leaf consists of leaves and leaf sheath.
+            Inflorescence monoecious; The seeds are often yellow, white, and purple.
           </p>
         </div>
         <router-link to="/barley"></router-link>
@@ -56,7 +76,11 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         <div>
           <img src="@/assets/shuidao1.jpg" alt="" />
           <p>
-            (Oryza sativa L.) &nbsp is an annual aquatic herb of the grass family (there are perennial rice varieties). The stem is erect and 0.5-1.5 m tall, depending on the species. Leaf sheath glabrous, loose; Lingual lanceolate; Leaf blade linear-lanceolate, ca. 1 cm wide, glabrous, coarse. Panicles large and sparsely spread, edges rough; Spikelet contains 1 mature flower.
+            (Oryza sativa L.) &nbsp is an annual aquatic herb of the grass family (there are
+            perennial rice varieties). The stem is erect and 0.5-1.5 m tall, depending on the
+            species. Leaf sheath glabrous, loose; Lingual lanceolate; Leaf blade linear-lanceolate,
+            ca. 1 cm wide, glabrous, coarse. Panicles large and sparsely spread, edges rough;
+            Spikelet contains 1 mature flower.
           </p>
         </div>
         <router-link to="/barley"></router-link>
@@ -65,7 +89,9 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         <div>
           <img src="@/assets/fanqie.jpg" alt="" />
           <p>
-            (Solanum lycopersicum L.) &nbsp is an annual herb of the Solanaceae family, growing up to 2 meters tall. Genetically modified tomatoes are bright red in color and have hard, hard-to-crack fruits. Tomato stems are prone to lodging.
+            (Solanum lycopersicum L.) &nbsp is an annual herb of the Solanaceae family, growing up
+            to 2 meters tall. Genetically modified tomatoes are bright red in color and have hard,
+            hard-to-crack fruits. Tomato stems are prone to lodging.
           </p>
         </div>
         <router-link to="/barley"></router-link>
@@ -74,7 +100,11 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         <div>
           <img src="@/assets/ninanjie.jpg" alt="" />
           <p>
-            (Arabidopsis thaliana (L.) Heynh) is a delicate annual herb of the genus Arabidopsis in the cruciferous family. Quilt hair and branched hair; Stem unbranched or partially branched from middle to upper part, lower part sometimes lilac white, stem often longitudinally grooved, upper part glabrous, lower part unilicate, stem leaves sessile, lanceolate, striate, oblong, or elliptic.
+            (Arabidopsis thaliana (L.) Heynh) is a delicate annual herb of the genus Arabidopsis in
+            the cruciferous family. Quilt hair and branched hair; Stem unbranched or partially
+            branched from middle to upper part, lower part sometimes lilac white, stem often
+            longitudinally grooved, upper part glabrous, lower part unilicate, stem leaves sessile,
+            lanceolate, striate, oblong, or elliptic.
           </p>
         </div>
         <router-link to="/barley"></router-link>

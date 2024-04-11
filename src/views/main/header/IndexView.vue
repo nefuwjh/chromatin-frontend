@@ -11,6 +11,4 @@ import { Avatar } from '@element-plus/icons-vue'
     </el-col>
   </el-row>
 </template>
-<style scoped>
-
-</style>
+<style scoped></style>

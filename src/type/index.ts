@@ -2,6 +2,7 @@ export interface PredictioInfo {
   spid?: string
   id?: string
   sequence?: string
+  time?:string
   count?: number
   desc?: string
   status?: number

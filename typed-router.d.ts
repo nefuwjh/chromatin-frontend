@@ -27,6 +27,7 @@ declare module 'vue-router/auto-routes' {
     '/main/sidebar/IndexView': RouteRecordInfo<'/main/sidebar/IndexView', '/main/sidebar/IndexView', Record<never, never>, Record<never, never>>,
     '/main/species/[spid]': RouteRecordInfo<'/main/species/[spid]', '/main/species/:spid', { spid: ParamValue<true> }, { spid: ParamValue<false> }>,
     '/main/species/AddBed': RouteRecordInfo<'/main/species/AddBed', '/main/species/AddBed', Record<never, never>, Record<never, never>>,
+    '/main/species/delete/DeleteView': RouteRecordInfo<'/main/species/delete/DeleteView', '/main/species/delete/DeleteView', Record<never, never>, Record<never, never>>,
     '/main/species/distribute/Dialog': RouteRecordInfo<'/main/species/distribute/Dialog', '/main/species/distribute/Dialog', Record<never, never>, Record<never, never>>,
     '/main/species/distribute/LookView': RouteRecordInfo<'/main/species/distribute/LookView', '/main/species/distribute/LookView', Record<never, never>, Record<never, never>>,
     '/see/Look01View': RouteRecordInfo<'/see/Look01View', '/see/Look01View', Record<never, never>, Record<never, never>>,

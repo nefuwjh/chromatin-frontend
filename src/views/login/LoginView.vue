@@ -23,10 +23,10 @@ const loginF = () => {
       <el-form-item>
         <el-input
           v-model="userR.account"
-          placeholder="账号"
+          placeholder="account"
           :prefix-icon="UserIco"
-          style="margin-bottom: 10px" />
-        <el-input type="password" v-model="userR.password" placeholder="密码" :prefix-icon="Lock" />
+          style="margin-bottom: 10px;" />
+        <el-input type="password" v-model="userR.password" placeholder="password" :prefix-icon="Lock" />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="loginF" class="login-btn">Login</el-button>

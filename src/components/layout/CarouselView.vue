@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 <template>
   <div id="Carousel">
     <el-carousel :interval="4000" type="card" height="300px">

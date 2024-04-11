@@ -1,13 +1,13 @@
 import type { PredictioInfo } from '@/type'
 
 export const listSpecies = () => [
-  {name: 'Hordeum_vulgare', sname: 'damai'},
-  {name: 'Triticum_aestivum', sname: 'xiaomai'},
-  {name: 'Sorghum_bicolor', sname: 'gaoliang'},
-  {name: 'Zea_mays', sname: 'yumi'},
-  {name: 'Oryza_sativa', sname: 'shuidao'},
-  {name: 'Solanum_lycopersicum', sname: 'fanqie'},
-  {name: 'Arabidopsis_thaliana', sname: 'ninanjie'}
+  {name: 'Hordeum_vulgare', sname: 'Hordeum_vulgare'},
+  {name: 'Triticum_aestivum', sname: 'Triticum_aestivum'},
+  {name: 'Sorghum_bicolor', sname: 'Sorghum_bicolor'},
+  {name: 'Zea_mays', sname: 'Zea_mays'},
+  {name: 'Oryza_sativa', sname: 'Oryza_sativa'},
+  {name: 'Solanum_lycopersicum', sname: 'Solanum_lycopersicum'},
+  {name: 'Arabidopsis_thaliana', sname: 'Arabidopsis_thaliana'}
  ]
 
 export const listSpeciesPart = () => [
@@ -68,83 +68,93 @@ export const look02 = () => [
 ]
 export const tableData: PredictioInfo[] = [
   {
-    spid: 'yumi',
+    spid: 'Zea_mays',
     id: '1598746215698745318',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
-    count: 5,
-    desc: '疾病',
+    sequence: 'Zea_mays_root_20240411',
+    time: '2024-04-11 17:53:27',
+    count: 6,
+    desc: '14号玉米样本，玉米xx病的相关基因区间',
     status: 1
   },
   {
-    spid: 'yumi',
+    spid: 'Zea_mays',
     id: '1598746215698745328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
-    count: 5,
-    desc: '疾病',
+    sequence: 'Zea_mays_root_20240411',
+    time: '2024-04-11 17:40:50',
+    count: 7,
+    desc: '11号玉米样本，玉米xx病的相关基因区间',
     status: 1
   },
   {
-    spid: 'yumi',
+    spid: 'Zea_mays',
     id: '1598746215698741328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
+    sequence: 'Zea_mays_root_20240407',
+    time: '2024-04-07 10:26:59',
     count: 5,
-    desc: '疾病',
+    desc: '13号玉米样本，玉米xx病的相关基因区间',
     status: 1
   },
   {
-    spid: 'yumi',
+    spid: 'Zea_mays',
     id: '1598746215698841328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
-    count: 5,
-    desc: '疾病',
+    sequence: 'Zea_mays_root_20240406',
+    time: '2024-04-06 13:11:27',
+    count: 4,
+    desc: '12号玉米样本一些感兴趣的区间',
     status: 1
   },
   {
-    spid: 'yumi',
+    spid: 'Zea_mays',
     id: '1598746215698841328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
+    sequence: 'Zea_mays_root_20240406',
+    time: '2024-04-06 12:43:11',
     count: 5,
-    desc: '疾病',
+    desc: '11号玉米样本，玉米根部xx性状调控的相关基因区间',
     status: 1
   },
   {
-    spid: 'yumi',
+    spid: 'Zea_mays',
     id: '1598746215698841328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
-    count: 5,
-    desc: '疾病',
+    sequence: 'Zea_mays_root_20240403',
+    time: '2024-04-03 21:04:22',
+    count: 9,
+    desc: '15号玉米样本，玉米根部xx性状调控的相关基因区间',
     status: 1
   },
   {
-    spid: 'yumi',
+    spid: 'Zea_mays',
     id: '1598746215698841328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
+    sequence: 'Zea_mays_root_20240403',
+    time: '2024-04-03 17:11:54',
     count: 5,
-    desc: '疾病',
+    desc: '11号玉米样本，玉米叶xx性状调控的相关基因区间',
     status: 1
   },
   {
-    spid: 'yumi',
+    spid: 'Zea_mays',
     id: '1598746215698841328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
-    count: 5,
-    desc: '疾病',
+    sequence: 'Zea_mays_root_20240403',
+    time: '2024-04-03 16:02:17',
+    count: 6,
+    desc: '6号玉米样本，玉米xx病的相关基因区间',
     status: 1
   },
   {
-    spid: 'yumi',
+    spid: 'Zea_mays',
     id: '1598746215698841328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
-    count: 5,
-    desc: '疾病',
+    sequence: 'Zea_mays_root_20240403',
+    time: '2024-04-03 15:59:32',
+    count: 6,
+    desc: '5号玉米样本一些感兴趣的区间',
     status: 1
   },
   {
-    spid: 'yumi',
+    spid: 'Zea_mays',
     id: '1598746215698841328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
+    sequence: 'Zea_mays_root_20240403',
+    time: '2024-04-03 15:45:50',
     count: 5,
-    desc: '疾病',
+    desc: 'xx玉米一些感兴趣的区间',
     status: 1
   },
   {

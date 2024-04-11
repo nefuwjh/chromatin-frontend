@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { render } from 'vue'
-import LookView from './LookView.vue';
+import LookView from './LookView.vue'
 const visibleR = ref(true)
 
 const closeF = () => {

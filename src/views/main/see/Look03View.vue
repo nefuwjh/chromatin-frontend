@@ -15,15 +15,9 @@ onMounted(() => {
   const yAxisData = xiaomai1.map((item) => item.Prob)
 
   const option1 = {
-    tooltip: {
-      trigger: 'axis',
-      position: function (pt: [number, number]) {
-        return [pt[0], '10%']
-      }
-    },
     title: {
       left: 'center',
-      text: 'Result Chart'
+      text: 'probability'
     },
     toolbox: {
       feature: {
@@ -35,23 +29,11 @@ onMounted(() => {
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: xAxisData
+      data: ['0-0.2', '0.2-0.4', '0.4-0.6', '0.6-0.8', '0.8-1']
     },
     yAxis: {
       type: 'value',
-      boundaryGap: [0, '100%']
     },
-    dataZoom: [
-      {
-        type: 'inside',
-        start: 0,
-        end: 10
-      },
-      {
-        start: 0,
-        end: 10
-      }
-    ],
     series: [
       {
         name: 'Fake Data',

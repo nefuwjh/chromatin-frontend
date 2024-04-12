@@ -1,14 +1,14 @@
 import type { PredictioInfo } from '@/type'
 
 export const listSpecies = () => [
-  {name: 'Hordeum_vulgare', sname: 'Hordeum_vulgare'},
-  {name: 'Triticum_aestivum', sname: 'Triticum_aestivum'},
-  {name: 'Sorghum_bicolor', sname: 'Sorghum_bicolor'},
-  {name: 'Zea_mays', sname: 'Zea_mays'},
-  {name: 'Oryza_sativa', sname: 'Oryza_sativa'},
-  {name: 'Solanum_lycopersicum', sname: 'Solanum_lycopersicum'},
-  {name: 'Arabidopsis_thaliana', sname: 'Arabidopsis_thaliana'}
- ]
+  { name: 'Hordeum_vulgare', sname: 'Hordeum_vulgare' },
+  { name: 'Triticum_aestivum', sname: 'Triticum_aestivum' },
+  { name: 'Sorghum_bicolor', sname: 'Sorghum_bicolor' },
+  { name: 'Zea_mays', sname: 'Zea_mays' },
+  { name: 'Oryza_sativa', sname: 'Oryza_sativa' },
+  { name: 'Solanum_lycopersicum', sname: 'Solanum_lycopersicum' },
+  { name: 'Arabidopsis_thaliana', sname: 'Arabidopsis_thaliana' }
+]
 
 export const listSpeciesPart = () => [
   {
@@ -70,7 +70,7 @@ export const tableData: PredictioInfo[] = [
   {
     spid: 'Zea_mays',
     id: '1598746215698745318',
-    sequence: 'Zea_mays_root_20240411',
+    sequence: 'Zea_mays_flower_20240411',
     time: '2024-04-11 17:53:27',
     count: 6,
     desc: '14号玉米样本，玉米xx病的相关基因区间',
@@ -88,7 +88,7 @@ export const tableData: PredictioInfo[] = [
   {
     spid: 'Zea_mays',
     id: '1598746215698741328',
-    sequence: 'Zea_mays_root_20240407',
+    sequence: 'Zea_mays_leaf_20240407',
     time: '2024-04-07 10:26:59',
     count: 5,
     desc: '13号玉米样本，玉米xx病的相关基因区间',
@@ -124,7 +124,7 @@ export const tableData: PredictioInfo[] = [
   {
     spid: 'Zea_mays',
     id: '1598746215698841328',
-    sequence: 'Zea_mays_root_20240403',
+    sequence: 'Zea_mays_leaf_20240403',
     time: '2024-04-03 17:11:54',
     count: 5,
     desc: '11号玉米样本，玉米叶xx性状调控的相关基因区间',
@@ -133,7 +133,7 @@ export const tableData: PredictioInfo[] = [
   {
     spid: 'Zea_mays',
     id: '1598746215698841328',
-    sequence: 'Zea_mays_root_20240403',
+    sequence: 'Zea_mays_stemt_20240403',
     time: '2024-04-03 16:02:17',
     count: 6,
     desc: '6号玉米样本，玉米xx病的相关基因区间',
@@ -142,7 +142,7 @@ export const tableData: PredictioInfo[] = [
   {
     spid: 'Zea_mays',
     id: '1598746215698841328',
-    sequence: 'Zea_mays_root_20240403',
+    sequence: 'Zea_mays_embryo_20240403',
     time: '2024-04-03 15:59:32',
     count: 6,
     desc: '5号玉米样本一些感兴趣的区间',
@@ -158,15 +158,15 @@ export const tableData: PredictioInfo[] = [
     status: 1
   },
   {
-    spid: 'damai',
+    spid: 'Hordeum_vulgare',
     id: '1598746215698745318',
-    sequence: 'damai_root_2024-03-03T12:21:14',
+    sequence: 'Hordeum_vulgare_root_2024-03-03T12:21:14',
     count: 5,
     desc: '疾病',
     status: 1
   },
   {
-    spid: 'damai',
+    spid: 'Hordeum_vulgare',
     id: '1598746215698745328',
     sequence: 'damai_root_2024-03-03T12:21:14',
     count: 5,
@@ -174,7 +174,7 @@ export const tableData: PredictioInfo[] = [
     status: 1
   },
   {
-    spid: 'damai',
+    spid: 'Hordeum_vulgare',
     id: '1598746215698741328',
     sequence: 'damai_root_2024-03-03T12:21:14',
     count: 5,

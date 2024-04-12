@@ -8,8 +8,13 @@ const closeF = () => {
 }
 </script>
 <template>
-  <el-dialog v-model="visibleR" title="分布" width="40%" @close="closeF">
-    <p>饼状图</p>
+  <el-dialog
+    v-model="visibleR"
+    title="Distribution Map"
+    width="40%"
+    @close="closeF"
+    center
+    style="border-radius: 10px">
     <LookView></LookView>
   </el-dialog>
 </template>

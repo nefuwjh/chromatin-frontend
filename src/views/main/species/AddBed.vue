@@ -2,6 +2,7 @@
 import { Plus } from '@element-plus/icons-vue'
 import { listSpeciesPart, listSpecies, tableData } from '@/data'
 import type { PredictionBed, PredictioInfo } from '@/type'
+
 const dialogFormVisible = ref(false)
 const openDialogF = async () => {
   dialogFormVisible.value = true
@@ -89,14 +90,26 @@ const submitF = () => {
   prediction.value.id = '1598746215698841328'
   prediction.value.count = 3
   prediction.value.sequence = bedInfoR.value.spid + '_' + bedInfoR.value.part + '_' + getDate()
+  ElNotification({
+    title: 'Uploading files',
+    message: '',
+    type: 'warning',
+    duration: 5000
+  })
   setTimeout(() => {
     tableData.unshift(JSON.parse(JSON.stringify(prediction.value)))
     console.log(tableData)
+    ElNotification({
+      title: 'Successful',
+      message: '',
+      type: 'success',
+      duration: 5000
+    })
   }, 5000)
   setTimeout(() => {
     tableData[0].status = 1
     console.log(tableData)
-  }, 10000)
+  }, 20000)
   dialogFormVisible.value = false
 }
 console.log(tableData)

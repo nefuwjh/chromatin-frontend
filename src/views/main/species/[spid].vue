@@ -43,7 +43,7 @@ console.log(resultsR.value)
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column label="Description" prop="desc" />
+        <el-table-column label="Description" prop="desc" show-overflow-tooltip />
         <el-table-column label="State" width="100">
           <template #default="scope">
             <span v-if="(scope.row as PredictioInfo).status == 0" style="color: red; margin: 10px">

@@ -89,8 +89,14 @@ const submitF = () => {
   prediction.value.id = '1598746215698841328'
   prediction.value.count = 3
   prediction.value.sequence = bedInfoR.value.spid + '_' + bedInfoR.value.part + '_' + getDate()
-  tableData.unshift(JSON.parse(JSON.stringify(prediction.value)))
-  console.log(tableData)
+  setTimeout(() => {
+    tableData.unshift(JSON.parse(JSON.stringify(prediction.value)))
+    console.log(tableData)
+  }, 5000)
+  setTimeout(() => {
+    tableData[0].status = 1
+    console.log(tableData)
+  }, 10000)
   dialogFormVisible.value = false
 }
 console.log(tableData)

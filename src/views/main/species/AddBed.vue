@@ -90,26 +90,34 @@ const submitF = () => {
   prediction.value.id = '1598746215698841328'
   prediction.value.count = 3
   prediction.value.sequence = bedInfoR.value.spid + '_' + bedInfoR.value.part + '_' + getDate()
-  ElNotification({
-    title: 'Uploading files',
-    message: '',
-    type: 'warning',
-    duration: 5000
+  const loading = ElLoading.service({
+    lock: true,
+    text: 'Loading',
+    background: 'rgba(0, 0, 0, 0.7)'
   })
+  setTimeout(() => {
+    loading.close()
+  }, 5000)
   setTimeout(() => {
     tableData.unshift(JSON.parse(JSON.stringify(prediction.value)))
     console.log(tableData)
+    ElNotification({
+      title: 'Processing files',
+      message: '',
+      type: 'warning',
+      duration: 125000
+    })
+  }, 5000)
+  setTimeout(() => {
+    tableData[0].status = 1
     ElNotification({
       title: 'Successful',
       message: '',
       type: 'success',
       duration: 5000
     })
-  }, 5000)
-  setTimeout(() => {
-    tableData[0].status = 1
     console.log(tableData)
-  }, 20000)
+  }, 130000)
   dialogFormVisible.value = false
 }
 console.log(tableData)

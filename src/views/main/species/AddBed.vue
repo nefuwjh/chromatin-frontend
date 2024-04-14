@@ -82,6 +82,9 @@ const prediction = ref<PredictioInfo>({
   status: 0
 })
 
+// 预测信息返回成功弹出信息框，秒
+const returnTimes = 1000 * 20
+
 const submitF = () => {
   prediction.value.spid = bedInfoR.value.spid
   prediction.value.status = 0
@@ -102,22 +105,22 @@ const submitF = () => {
     tableData.unshift(JSON.parse(JSON.stringify(prediction.value)))
     console.log(tableData)
     ElNotification({
-      title: 'Processing files',
-      message: '',
-      type: 'warning',
-      duration: 125000
+      title: 'Success',
+      message: 'Browser extensible data been posted.',
+      type: 'success',
+      duration: 5000
     })
   }, 5000)
   setTimeout(() => {
     tableData[0].status = 1
     ElNotification({
       title: 'Successful',
-      message: '',
+      message: 'Accessibility information has been returned.',
       type: 'success',
       duration: 5000
     })
     console.log(tableData)
-  }, 130000)
+  }, returnTimes)
   dialogFormVisible.value = false
 }
 console.log(tableData)

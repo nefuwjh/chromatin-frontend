@@ -2,6 +2,7 @@
 import type { User } from '@/type'
 import { User as UserIco, Lock, UserFilled } from '@element-plus/icons-vue'
 import router from '@/router'
+import { createElLoading } from '@/components/loading'
 const dialogFormVisible = ref(false)
 const userR = ref<User>({ account: '1001', password: '1001' })
 
@@ -17,8 +18,13 @@ const loginF = () => {
   formRef.value.validate(async (valid: boolean) => {
     if (valid) {
       if (userR.value.account == '1001' && userR.value.password == '1001') {
-        router.push('/main')
-        ElMessage({ type: 'success', message: '登录成功' })
+        const load = createElLoading()
+        setTimeout(() => {
+          dialogFormVisible.value = false
+          load.close()
+          router.push('/main')
+          ElMessage({ type: 'success', message: '登录成功' })
+        }, 1500)
       }
     }
   })

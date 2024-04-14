@@ -143,27 +143,27 @@ p {
   margin: 10px;
 }
 /* 去除灰色横条 */
-::v-deep .el-tabs__nav-wrap::after {
+:v-deep .el-tabs__nav-wrap::after {
   position: static !important;
 }
 /* 设置滑块颜色 */
-::v-deep .el-tabs__active-bar {
+:v-deep .el-tabs__active-bar {
   background-color: #538fff !important;
 }
 /* 设置滑块停止位置 */
-::v-deep .el-tabs__active-bar.is-top {
+:v-deep .el-tabs__active-bar.is-top {
   height: 37px;
   border-radius: 17px;
   top: 0px !important;
 }
 /* 设置当前选中样式 */
-::v-deep .el-tabs__item.is-active {
+:v-deep .el-tabs__item.is-active {
   color: #ffffff !important;
   z-index: 2;
   /* border: 1px solid red; */
 }
 /* 设置未被选中样式 */
-::v-deep .el-tabs__item {
+:v-deep .el-tabs__item {
   padding: 0 20px !important;
   color: hsl(0, 0%, 4%) !important;
 }

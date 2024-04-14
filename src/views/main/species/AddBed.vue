@@ -114,7 +114,7 @@ const submitF = () => {
   setTimeout(() => {
     tableData[0].status = 1
     ElNotification({
-      title: 'Successful',
+      title: 'Success',
       message: 'Accessibility information has been returned.',
       type: 'success',
       duration: 5000

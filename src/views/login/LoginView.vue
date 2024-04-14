@@ -9,7 +9,7 @@ const rules = {
   account: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
   password: [
     { required: true, message: '密码不能为空', trigger: 'blur' },
-    { min: 3, max: 14, message: '密码长度为6-14个字符', trigger: 'blur' }
+    { min: 3, max: 14, message: '密码长度为3-14个字符', trigger: 'blur' }
   ]
 }
 const formRef = ref(null) as any

@@ -44,7 +44,7 @@ import Look07View from './see/Look07View.vue'
       <el-col :span="10" class="row-02">
         <Look05View></Look05View>
       </el-col>
-    </el-row >
+    </el-row>
     <el-row class="row-03">
       <el-col :span="10" class="row-03">
         <Look06View></Look06View>
@@ -53,6 +53,7 @@ import Look07View from './see/Look07View.vue'
         <Look07View></Look07View>
       </el-col>
     </el-row>
+    <el-backtop :right="100" :bottom="100" style="box-shadow: 7px 7px 14px #162d81db" />
   </main>
 </template>
 <style scoped>

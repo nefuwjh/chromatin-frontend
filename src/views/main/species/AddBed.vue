@@ -2,6 +2,8 @@
 import { Plus } from '@element-plus/icons-vue'
 import { listSpeciesPart, listSpecies, tableData } from '@/data'
 import type { PredictionBed, PredictioInfo } from '@/type'
+import router from '@/router'
+import { createElLoading } from '@/components/loading'
 
 const dialogFormVisible = ref(false)
 const openDialogF = async () => {
@@ -13,7 +15,7 @@ const bedFileR = ref<HTMLInputElement>()
 const speciesParts = listSpeciesPart()
 // 部位
 const species = listSpecies()
-const bedInfoR = ref<PredictionBed>({ name: '', part: '' })
+const bedInfoR = ref<PredictionBed>({})
 const fileContentR = ref({ content: '' })
 
 const bedFileInfoR = ref({ lines: 0, gens: '' })
@@ -83,7 +85,7 @@ const prediction = ref<PredictioInfo>({
 })
 
 // 预测信息返回成功弹出信息框，秒
-const returnTimes = 1000 * 20
+const returnTimes = 1000 * 15
 
 const submitF = () => {
   prediction.value.spid = bedInfoR.value.spid
@@ -93,35 +95,35 @@ const submitF = () => {
   prediction.value.id = '1598746215698841328'
   prediction.value.count = 3
   prediction.value.sequence = bedInfoR.value.spid + '_' + bedInfoR.value.part + '_' + getDate()
-  const loading = ElLoading.service({
-    lock: true,
-    text: 'Loading',
-    background: 'rgba(0, 0, 0, 0.7)'
-  })
+  const loading = createElLoading()
   setTimeout(() => {
     loading.close()
-  }, 5000)
-  setTimeout(() => {
     tableData.unshift(JSON.parse(JSON.stringify(prediction.value)))
     console.log(tableData)
     ElNotification({
       title: 'Success',
       message: 'Browser extensible data been posted.',
       type: 'success',
-      duration: 5000
+      duration: 3000
     })
   }, 5000)
+
   setTimeout(() => {
     tableData[0].status = 1
-    ElNotification({
+    const msg = ElNotification({
       title: 'Success',
       message: 'Accessibility information has been returned.',
       type: 'success',
-      duration: 5000
+      duration: 4500,
+      onClick: () => {
+        router.push('/main/detail/1598746215698841328')
+        msg.close()
+      }
     })
     console.log(tableData)
   }, returnTimes)
   dialogFormVisible.value = false
+  bedInfoR.value = {}
 }
 console.log(tableData)
 </script>
@@ -139,7 +141,7 @@ console.log(tableData)
         </el-select>
       </el-form-item>
 
-      <el-form-item>
+      <el-form-item v-if="bedInfoR.spid">
         <el-select v-model="bedInfoR.part" placeholder="Select" size="large">
           <el-option
             v-for="item in speciesParts"
@@ -148,20 +150,22 @@ console.log(tableData)
             :value="item.sname" />
         </el-select>
       </el-form-item>
-      <el-form-item>
+      <el-form-item v-if="bedInfoR.part">
         <el-input
           v-model="bedInfoR.desc"
           :autosize="{ minRows: 2, maxRows: 4 }"
           type="textarea"
           placeholder="Please input" />
       </el-form-item>
-      <el-form-item>
+      <el-form-item v-if="bedInfoR.part">
         <el-button @click="activeF" type="primary" style="width: 500px">Select Your File</el-button>
         <br />
-        <div>your file：{{ bedFileInfoR.lines }} lines / chr：{{ bedFileInfoR.gens }}</div>
+        <div v-if="bedFileInfoR.lines > 0">
+          your file：{{ bedFileInfoR.lines }} lines / chr：{{ bedFileInfoR.gens }}
+        </div>
         <input type="file" ref="bedFileR" hidden @change="changeF" />
       </el-form-item>
-      <el-form-item>
+      <el-form-item v-if="bedFileInfoR.lines > 0">
         <el-button type="success" style="width: 500px" @click="submitF">Submit</el-button>
       </el-form-item>
     </el-form>

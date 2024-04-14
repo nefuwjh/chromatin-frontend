@@ -21,6 +21,7 @@ watch(
 )
 
 console.log(resultsR.value)
+const iconSize = 18
 </script>
 <template>
   <el-row class="my-row">
@@ -46,34 +47,32 @@ console.log(resultsR.value)
         <el-table-column label="Description" prop="desc" show-overflow-tooltip />
         <el-table-column label="State" width="100">
           <template #default="scope">
-            <span v-if="(scope.row as PredictioInfo).status == 0" style="color: red; margin: 10px">
-              <el-icon><UploadFilled /></el-icon>
-            </span>
-            <span v-else style="color: green; margin: 10px">
-              <el-icon><SuccessFilled /></el-icon>
-            </span>
+            <el-icon
+              :size="iconSize"
+              color="#E6A23C"
+              v-if="(scope.row as PredictioInfo).status == 0">
+              <UploadFilled />
+            </el-icon>
+            <el-icon :size="iconSize" color="green" v-else><SuccessFilled /></el-icon>
           </template>
         </el-table-column>
         <el-table-column label="Operations">
           <template #default="scope">
-            <span v-if="(scope.row as PredictioInfo).status == 0"></span>
-            <span v-else>
-              <RouterLink :to="`/main/detail/${(scope.row as PredictioInfo).id}`">
-                <span style="margin: 10px">
-                  <el-icon><Tools /></el-icon>
-                </span>
-              </RouterLink>
-              <el-button
-                type="primary"
+            <span style="display: inline-block; width: 25px; margin-right: 15px">
+              <template v-if="(scope.row as PredictioInfo).status! > 0">
+                <RouterLink :to="`/main/detail/${(scope.row as PredictioInfo).id}`">
+                  <el-icon :size="iconSize"><Tools /></el-icon>
+                </RouterLink>
+              </template>
+            </span>
+            <span style="display: inline-block">
+              <el-icon
+                :size="iconSize"
+                color="red"
                 @click="createDelConfirmDialog(scope.$index)"
-                :icon="DeleteFilled"
-                circle
-                style="
-                  color: red;
-                  background-color: white;
-                  border: 0;
-                  padding-top: 1px;
-                "></el-button>
+                style="cursor: pointer">
+                <DeleteFilled />
+              </el-icon>
             </span>
           </template>
         </el-table-column>

@@ -6,7 +6,7 @@ import SidebarView from './main/sidebar/IndexView.vue'
   <el-container>
     <el-header class="container"><HeaderView /></el-header>
     <el-container style="margin-top: 5px">
-      <el-aside class="container" width="300px">
+      <el-aside class="container" width="250px">
         <SidebarView />
       </el-aside>
       <el-main class="container"><RouterView /></el-main>

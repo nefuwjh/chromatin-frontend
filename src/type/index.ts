@@ -2,7 +2,7 @@ export interface PredictioInfo {
   spid?: string
   id?: string
   sequence?: string
-  time?:string
+  time?: string
   count?: number
   desc?: string
   status?: number
@@ -15,8 +15,8 @@ export interface PredictionBed {
   count?: number
   desc?: string
   status?: number
-  part?:string
-  name?:string
+  part?: string
+  name?: string
 }
 
 export interface User {

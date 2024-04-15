@@ -88,8 +88,6 @@ onMounted(() => {
     echartsInstance.value.setOption(option2)
   }
 })
-
-
 </script>
 
 <template>
@@ -100,7 +98,8 @@ onMounted(() => {
 .echart-box {
   width: 400px;
   height: 300px;
-  margin-top: 35px;
+  margin-bottom: 20px;
+  margin-left: 100px;
   display: inline-block;
   background-color: white;
   border-radius: 3%;
@@ -108,6 +107,6 @@ onMounted(() => {
   transition: box-shadow 0.3s; /* 添加过渡效果 */
 }
 .echart-box:hover {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* 阴影效果 */
+  box-shadow: 0 2px 20px #162d81db; /* 阴影效果 */
 }
 </style>

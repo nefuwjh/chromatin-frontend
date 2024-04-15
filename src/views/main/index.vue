@@ -1,6 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 <template>
   <main>
-    <div>main</div>
+    <h1>Please select a species</h1>
   </main>
 </template>

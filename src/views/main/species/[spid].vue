@@ -1,11 +1,27 @@
 <script setup lang="ts">
 import type { PredictioInfo } from '@/type'
-import { Search } from '@element-plus/icons-vue'
+import { Search, Tools, UploadFilled, SuccessFilled, DeleteFilled } from '@element-plus/icons-vue'
 import AddBed from './AddBed.vue'
 import { listPredictionResults } from '@/data'
 import { showDistributeDialog } from './distribute'
+import { createDelConfirmDialog } from './delete'
+import { useRoute } from 'vue-router'
+import { ref, watch } from 'vue'
 
-const results = listPredictionResults()
+const route = useRoute()
+
+const resultsR = ref<PredictioInfo[]>([])
+
+watch(
+  route,
+  () => {
+    resultsR.value = listPredictionResults().filter((item) => item.spid === route.params.spid)
+  },
+  { immediate: true }
+)
+
+console.log(resultsR.value)
+const iconSize = 18
 </script>
 <template>
   <el-row class="my-row">
@@ -14,25 +30,50 @@ const results = listPredictionResults()
       <el-input style="width: 240px" placeholder="Type something" :prefix-icon="Search" />
     </el-col>
     <el-col>
-      <el-table :data="results">
+      <el-table :data="resultsR">
         <el-table-column type="index" label="#" width="50" />
-        <el-table-column label="序号" prop="sequence" />
-        <el-table-column label="个数">
+        <el-table-column label="Data Name" prop="sequence" width="200" />
+        <el-table-column label="Add Time" prop="time" />
+        <el-table-column label="Chr Count" width="100">
           <template #default="scope">
-            <el-tag type="primary" @click="showDistributeDialog()" style="cursor: pointer">
+            <el-tag
+              type="primary"
+              @click="showDistributeDialog()"
+              style="cursor: pointer; margin: 20px">
               {{ (scope.row as PredictioInfo).count }}
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column label="描述" prop="desc" />
-        <el-table-column label="状态">
+        <el-table-column label="Description" prop="desc" show-overflow-tooltip />
+        <el-table-column label="State" width="100">
           <template #default="scope">
-            <span v-if="(scope.row as PredictioInfo).status == 0" style="color: red">
-              处理中...
+            <el-icon
+              :size="iconSize"
+              color="#E6A23C"
+              v-if="(scope.row as PredictioInfo).status == 0">
+              <UploadFilled />
+            </el-icon>
+            <el-icon :size="iconSize" color="green" v-else><SuccessFilled /></el-icon>
+          </template>
+        </el-table-column>
+        <el-table-column label="Operations">
+          <template #default="scope">
+            <span style="display: inline-block; width: 25px; margin-right: 15px">
+              <template v-if="(scope.row as PredictioInfo).status! > 0">
+                <RouterLink :to="`/main/detail/${(scope.row as PredictioInfo).id}`">
+                  <el-icon :size="iconSize"><Tools /></el-icon>
+                </RouterLink>
+              </template>
             </span>
-            <RouterLink :to="`/main/detail/${(scope.row as PredictioInfo).id}`" v-else>
-              <span>详细</span>
-            </RouterLink>
+            <span style="display: inline-block">
+              <el-icon
+                :size="iconSize"
+                color="red"
+                @click="createDelConfirmDialog(scope.$index)"
+                style="cursor: pointer">
+                <DeleteFilled />
+              </el-icon>
+            </span>
           </template>
         </el-table-column>
       </el-table>
@@ -42,4 +83,3 @@ const results = listPredictionResults()
     </el-col>
   </el-row>
 </template>
-@/type

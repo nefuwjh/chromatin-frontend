@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { render } from 'vue'
-import LookView from './LookView.vue';
+import LookView from './LookView.vue'
 const visibleR = ref(true)
 
 const closeF = () => {
@@ -8,8 +8,13 @@ const closeF = () => {
 }
 </script>
 <template>
-  <el-dialog v-model="visibleR" title="分布" width="40%" @close="closeF">
-    <p>饼状图</p>
+  <el-dialog
+    v-model="visibleR"
+    title="Distribution Map"
+    width="40%"
+    @close="closeF"
+    center
+    style="border-radius: 10px">
     <LookView></LookView>
   </el-dialog>
 </template>

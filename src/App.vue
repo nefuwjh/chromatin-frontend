@@ -54,22 +54,14 @@ body {
   text-align: center;
   padding: 4px 12px;
   font-family: Arial, sans-serif;
-  color: white;
+  /* color: white; */
   border-radius: 15px;
-  box-shadow: 10px 4px 10px rgb(255, 255, 255);
+  box-shadow: 10px 4px 10px #162d81db;
 }
 
-#router {
+#router { 
   padding: 20px;
-  /* 毛玻璃 */
-  background: rgb(255, 255, 255, 0.1);
+  background-color: white;
   border-radius: 10px;
-  justify-content: center;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 25px 45px rgb(0, 0, 0, 0.1);
-  border: 1px solid rgb(255, 255, 255, 0.5);
-  border-right: 1px solid rgb(255, 255, 255, 0.2);
-  border-bottom: 1px solid rgb(255, 255, 255, 0.2);
-  /*  */
 }
 </style>

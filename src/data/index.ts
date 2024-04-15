@@ -1,11 +1,43 @@
 import type { PredictioInfo } from '@/type'
 
-export const listSpecies = () => [{ name: '玉米', sname: 'yumi' }]
+export const listSpecies = () => [
+  { name: 'Hordeum_vulgare', sname: 'Hordeum_vulgare' },
+  { name: 'Triticum_aestivum', sname: 'Triticum_aestivum' },
+  { name: 'Sorghum_bicolor', sname: 'Sorghum_bicolor' },
+  { name: 'Zea_mays', sname: 'Zea_mays' },
+  { name: 'Oryza_sativa', sname: 'Oryza_sativa' },
+  { name: 'Solanum_lycopersicum', sname: 'Solanum_lycopersicum' },
+  { name: 'Arabidopsis_thaliana', sname: 'Arabidopsis_thaliana' }
+]
 
 export const listSpeciesPart = () => [
   {
     name: 'root',
     sname: 'root'
+  },
+  {
+    name: 'leaf',
+    sname: 'leaf'
+  },
+  {
+    name: 'stem',
+    sname: 'stem'
+  },
+  {
+    name: 'flower',
+    sname: 'flower'
+  },
+  {
+    name: 'fruit',
+    sname: 'fruit'
+  },
+  {
+    name: 'embryo',
+    sname: 'embryo'
+  },
+  {
+    name: 'seedling',
+    sname: 'seedling'
   }
 ]
 
@@ -34,31 +66,205 @@ export const look02 = () => [
     { value: 1230, name: 'WH4' }
   ]
 ]
-const tableData: PredictioInfo[] = [
+export const tableData: PredictioInfo[] = [
   {
+    spid: 'Zea_mays',
     id: '1598746215698745318',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
-    count: 5,
-    desc: '疾病',
-    status: 0
+    sequence: 'Zea_mays_flower_20240411',
+    time: '2024-04-11 17:53:27',
+    count: 6,
+    desc: '14号玉米样本，玉米xx病的相关基因区间',
+    status: 1
   },
   {
+    spid: 'Zea_mays',
     id: '1598746215698745328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
-    count: 5,
-    desc: '疾病',
-    status: 0
+    sequence: 'Zea_mays_root_20240411',
+    time: '2024-04-11 17:40:50',
+    count: 7,
+    desc: '11号玉米样本，玉米xx病的相关基因区间',
+    status: 1
   },
   {
+    spid: 'Zea_mays',
     id: '1598746215698741328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
+    sequence: 'Zea_mays_leaf_20240407',
+    time: '2024-04-07 10:26:59',
+    count: 5,
+    desc: '13号玉米样本，玉米xx病的相关基因区间',
+    status: 1
+  },
+  {
+    spid: 'Zea_mays',
+    id: '1598746215698841328',
+    sequence: 'Zea_mays_root_20240406',
+    time: '2024-04-06 13:11:27',
+    count: 4,
+    desc: '12号玉米样本一些感兴趣的区间',
+    status: 1
+  },
+  {
+    spid: 'Zea_mays',
+    id: '1598746215698841328',
+    sequence: 'Zea_mays_root_20240406',
+    time: '2024-04-06 12:43:11',
+    count: 5,
+    desc: '11号玉米样本，玉米根部xx性状调控的相关基因区间',
+    status: 1
+  },
+  {
+    spid: 'Zea_mays',
+    id: '1598746215698841328',
+    sequence: 'Zea_mays_root_20240403',
+    time: '2024-04-03 21:04:22',
+    count: 9,
+    desc: '15号玉米样本，玉米根部xx性状调控的相关基因区间',
+    status: 1
+  },
+  {
+    spid: 'Zea_mays',
+    id: '1598746215698841328',
+    sequence: 'Zea_mays_leaf_20240403',
+    time: '2024-04-03 17:11:54',
+    count: 5,
+    desc: '11号玉米样本，玉米叶xx性状调控的相关基因区间',
+    status: 1
+  },
+  {
+    spid: 'Zea_mays',
+    id: '1598746215698841328',
+    sequence: 'Zea_mays_stemt_20240403',
+    time: '2024-04-03 16:02:17',
+    count: 6,
+    desc: '6号玉米样本，玉米xx病的相关基因区间',
+    status: 1
+  },
+  {
+    spid: 'Zea_mays',
+    id: '1598746215698841328',
+    sequence: 'Zea_mays_embryo_20240403',
+    time: '2024-04-03 15:59:32',
+    count: 6,
+    desc: '5号玉米样本一些感兴趣的区间',
+    status: 1
+  },
+  {
+    spid: 'Zea_mays',
+    id: '1598746215698841328',
+    sequence: 'Zea_mays_root_20240403',
+    time: '2024-04-03 15:45:50',
+    count: 5,
+    desc: 'xx玉米一些感兴趣的区间',
+    status: 1
+  },
+  {
+    spid: 'Hordeum_vulgare',
+    id: '1598746215698745318',
+    sequence: 'Hordeum_vulgare_root_2024-03-03T12:21:14',
     count: 5,
     desc: '疾病',
     status: 1
   },
   {
+    spid: 'Hordeum_vulgare',
+    id: '1598746215698745328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'Hordeum_vulgare',
+    id: '1598746215698741328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
     id: '1598746215698841328',
-    sequence: 'yumi_root_2024-03-03T12:21:14',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
+    id: '1598746215698841328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
+    id: '1598746215698841328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'damai',
+    id: '1598746215698841328',
+    sequence: 'damai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
+    count: 5,
+    desc: '疾病',
+    status: 1
+  },
+  {
+    spid: 'xiaomai',
+    id: '1598746215698841328',
+    sequence: 'xiaomai_root_2024-03-03T12:21:14',
     count: 5,
     desc: '疾病',
     status: 1

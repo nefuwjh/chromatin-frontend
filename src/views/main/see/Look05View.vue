@@ -1,33 +1,24 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
 import { onMounted, ref } from 'vue'
-import { look02 } from '@/data/index'
+import { xiaomai1 } from '@/data/index'
 
 const echartsInstance = ref<echarts.ECharts | null>(null)
 const boxRef2 = ref<HTMLDivElement | null>(null)
-
-const dataSets = look02()
-
-let dataIndex = ref(0)
-
-//监听dataIndex的变化
-watch(dataIndex, (newValue) => {
-  updateChart(newValue)
+const chromosomeCounts: Record<string, number> = {}
+xiaomai1.forEach((item) => {
+  if (item.Prob >= 0.5) {
+    if (item.Chr in chromosomeCounts) {
+      chromosomeCounts[item.Chr]++
+    } else {
+      chromosomeCounts[item.Chr] = 1
+    }
+  }
 })
 
-//更新图表数据
-const updateChart = (index: number) => {
-  if (echartsInstance.value) {
-    const option = {
-      series: [
-        {
-          data: dataSets[index]
-        }
-      ]
-    }
-    echartsInstance.value.setOption(option)
-  }
-}
+const xAxisData = Object.keys(chromosomeCounts)
+const seriesData = Object.values(chromosomeCounts)
+
 onMounted(() => {
   // 初始化 echarts 实例
   const container2 = boxRef2.value
@@ -55,11 +46,15 @@ onMounted(() => {
       },
       legend: {
         orient: 'vertical',
-        left: 'left',
+        left: 'left'
       },
+      title: {
+      left: 'center',
+      text: 'Accessibility'
+    },
       series: [
         {
-          name: 'Access From',
+          name: 'Chromosome Counts',
           type: 'pie',
           radius: ['40%', '70%'],
           avoidLabelOverlap: false,
@@ -68,7 +63,7 @@ onMounted(() => {
             borderRadius: 10
           },
           label: {
-            show: false,
+            show: true,
             position: 'center'
           },
           emphasis: {
@@ -79,9 +74,9 @@ onMounted(() => {
             }
           },
           labelLine: {
-            show: false
+            show: true
           },
-          data: dataSets[dataIndex.value]
+          data: xAxisData.map((chr, index) => ({ name: chr, value: seriesData[index] }))
         }
       ]
     }

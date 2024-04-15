@@ -30,6 +30,9 @@ onMounted(() => {
           saveAsImage: {}
         }
       },
+      tooltip: {
+        trigger: 'item'
+      },
       xAxis: {
         type: 'category',
         data: ['大麦', '小麦', '高粱', '玉米', '水稻', '番茄', '拟南芥']

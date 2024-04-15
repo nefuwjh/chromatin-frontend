@@ -3,6 +3,9 @@ import { xiaomai1 } from '@/data'
 import Look01View from '@/views/main/see/Look01View.vue'
 import Look02View from '@/views/main/see/Look02View.vue'
 import Look03View from '@/views/main/see/Look03View.vue'
+import Look04View from '@/views/main/see/Look04View.vue'
+import Look05View from '@/views/main/see/Look05View.vue'
+import Look06View from '@/views/main/see/Look06View.vue'
 const route = useRoute()
 let currentPage = ref(1)
 let pageSize = 5
@@ -45,9 +48,20 @@ const updateCurrentPageData = () => {
       <Look02View></Look02View>
     </el-col>
   </el-row>
-  <el-row>
-    <el-col :span="8.5" class="row-00">
+  <el-row class="row-01">
+    <el-col :span="8.5" class="row-01">
       <Look03View></Look03View>
+    </el-col>
+    <el-col :span="8.5" class="row-01">
+      <Look04View></Look04View>
+    </el-col>
+  </el-row>
+  <el-row class="row-02">
+    <el-col :span="8.5" class="row-02">
+      <Look05View></Look05View>
+    </el-col>
+    <el-col :span="8.5" class="row-02">
+      <Look06View></Look06View>
     </el-col>
   </el-row>
 </template>

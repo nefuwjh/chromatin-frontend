@@ -25,10 +25,18 @@ onMounted(() => {
       },
       toolbox: {
         feature: {
-          dataView: {},
+          dataView: {
+            show: true,
+            readOnly: false,
+            // 设置 dataView 的位置和大小
+            width: '100px'
+          },
           restore: {},
           saveAsImage: {}
         }
+      },
+      tooltip: {
+        trigger: 'item'
       },
       xAxis: {
         type: 'category',
@@ -43,7 +51,7 @@ onMounted(() => {
       },
       series: [
         {
-          data: [92, 80, 70, 60, 70, 10, 30],
+          data: [82, 80, 70, 60, 70, 10, 30],
           type: 'bar',
           showBackground: true,
           color: '#2486b9',

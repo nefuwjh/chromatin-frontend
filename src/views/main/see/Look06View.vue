@@ -1,23 +1,23 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
 import { onMounted, ref } from 'vue'
-import { look02, xiaomai1 } from '@/data/index'
+import { xiaomai1 } from '@/data/index'
 
 const echartsInstance = ref<echarts.ECharts | null>(null)
 const boxRef2 = ref<HTMLDivElement | null>(null)
-const chromosomeCounts: Record<string,number> = {}
-xiaomai1.forEach(item => {
-    if(item.Chr in chromosomeCounts) {
-        chromosomeCounts[item.Chr]++
+const chromosomeCounts: Record<string, number> = {}
+xiaomai1.forEach((item) => {
+  if (item.Prob < 0.5) {
+    if (item.Chr in chromosomeCounts) {
+      chromosomeCounts[item.Chr]++
+    } else {
+      chromosomeCounts[item.Chr] = 1
     }
-    else {
-        chromosomeCounts[item.Chr] = 1
-    }
+  }
 })
 
 const xAxisData = Object.keys(chromosomeCounts)
 const seriesData = Object.values(chromosomeCounts)
-
 
 onMounted(() => {
   // 初始化 echarts 实例
@@ -45,9 +45,9 @@ onMounted(() => {
         trigger: 'item'
       },
       title: {
-      left: 'center',
-      text: 'All'
-    },
+        left: 'center',
+        text: 'Inaccessibility'
+      },
       legend: {
         orient: 'vertical',
         left: 'left'
@@ -76,7 +76,7 @@ onMounted(() => {
           labelLine: {
             show: true
           },
-          data:  xAxisData.map((chr, index) => ({ name: chr, value: seriesData[index] }))
+          data: xAxisData.map((chr, index) => ({ name: chr, value: seriesData[index] }))
         }
       ]
     }

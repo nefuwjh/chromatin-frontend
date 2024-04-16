@@ -5,22 +5,19 @@ import AddBed from './AddBed.vue'
 import { listPredictionResults } from '@/data'
 import { showDistributeDialog } from './distribute'
 import { createDelConfirmDialog } from './delete'
-import { useRoute } from 'vue-router'
-import { ref, watch } from 'vue'
 
 const route = useRoute()
-
+const spidR = ref('')
 const resultsR = ref<PredictioInfo[]>([])
-
 watch(
   route,
   () => {
-    resultsR.value = listPredictionResults().filter((item) => item.spid === route.params.spid)
+    spidR.value = (route.params as any).spid
+    resultsR.value = listPredictionResults().filter((item) => item.spid === spidR.value)
   },
   { immediate: true }
 )
 
-console.log(resultsR.value)
 const iconSize = 18
 </script>
 <template>
@@ -60,7 +57,8 @@ const iconSize = 18
           <template #default="scope">
             <span style="display: inline-block; width: 25px; margin-right: 15px">
               <template v-if="(scope.row as PredictioInfo).status! > 0">
-                <RouterLink :to="`/main/detail/${(scope.row as PredictioInfo).id}`">
+                <RouterLink
+                  :to="`/main/species/${spidR}/details/${(scope.row as PredictioInfo).id}`">
                   <el-icon :size="iconSize"><Tools /></el-icon>
                 </RouterLink>
               </template>

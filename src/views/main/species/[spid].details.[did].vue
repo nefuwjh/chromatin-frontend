@@ -7,7 +7,7 @@ import Look03View from '@/views/main/see/Look03View.vue'
 import Look04View from '@/views/main/see/Look04View.vue'
 import Look05View from '@/views/main/see/Look05View.vue'
 import Look06View from '@/views/main/see/Look06View.vue'
-const route = useRoute()
+
 let currentPage = ref(1)
 let pageSize = 10
 const handleCurrentChange = (val: number): void => {

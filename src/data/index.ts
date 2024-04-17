@@ -1,13 +1,13 @@
 import type { PredictioInfo } from '@/type'
 
 export const listSpecies = () => [
-  { name: 'Hordeum_vulgare', sname: 'Hordeum_vulgare' },
-  { name: 'Triticum_aestivum', sname: 'Triticum_aestivum' },
-  { name: 'Sorghum_bicolor', sname: 'Sorghum_bicolor' },
-  { name: 'Zea_mays', sname: 'Zea_mays' },
-  { name: 'Oryza_sativa', sname: 'Oryza_sativa' },
-  { name: 'Solanum_lycopersicum', sname: 'Solanum_lycopersicum' },
-  { name: 'Arabidopsis_thaliana', sname: 'Arabidopsis_thaliana' }
+  { name: 'Hordeum_vulgare' },
+  { name: 'Triticum_aestivum' },
+  { name: 'Sorghum_bicolor' },
+  { name: 'Zea_mays' },
+  { name: 'Oryza_sativa' },
+  { name: 'Solanum_lycopersicum' },
+  { name: 'Arabidopsis_thaliana' }
 ]
 
 export const listSpeciesPart = () => [

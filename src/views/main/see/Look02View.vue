@@ -5,19 +5,17 @@ import { look02, xiaomai1 } from '@/data/index'
 
 const echartsInstance = ref<echarts.ECharts | null>(null)
 const boxRef2 = ref<HTMLDivElement | null>(null)
-const chromosomeCounts: Record<string,number> = {}
-xiaomai1.forEach(item => {
-    if(item.Chr in chromosomeCounts) {
-        chromosomeCounts[item.Chr]++
-    }
-    else {
-        chromosomeCounts[item.Chr] = 1
-    }
+const chromosomeCounts: Record<string, number> = {}
+xiaomai1.forEach((item) => {
+  if (item.Chr in chromosomeCounts) {
+    chromosomeCounts[item.Chr]++
+  } else {
+    chromosomeCounts[item.Chr] = 1
+  }
 })
 
 const xAxisData = Object.keys(chromosomeCounts)
 const seriesData = Object.values(chromosomeCounts)
-
 
 onMounted(() => {
   // 初始化 echarts 实例
@@ -45,9 +43,9 @@ onMounted(() => {
         trigger: 'item'
       },
       title: {
-      left: 'center',
-      text: 'All'
-    },
+        left: 'center',
+        text: 'All'
+      },
       legend: {
         orient: 'vertical',
         left: 'left'
@@ -76,7 +74,7 @@ onMounted(() => {
           labelLine: {
             show: true
           },
-          data:  xAxisData.map((chr, index) => ({ name: chr, value: seriesData[index] }))
+          data: xAxisData.map((chr, index) => ({ name: chr, value: seriesData[index] }))
         }
       ]
     }
@@ -99,6 +97,7 @@ onMounted(() => {
   width: 400px;
   height: 300px;
   margin-top: 35px;
+  margin-left:20px;
   display: inline-block;
   background-color: white;
   border-radius: 3%;

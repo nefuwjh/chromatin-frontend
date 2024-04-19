@@ -99,6 +99,7 @@ onMounted(() => {
   width: 400px;
   height: 300px;
   margin-top: 35px;
+  margin-left: 20px;
   display: inline-block;
   background-color: white;
   border-radius: 3%;

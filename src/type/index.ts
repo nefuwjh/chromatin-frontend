@@ -30,3 +30,12 @@ export interface ResultVO<T> {
   message?: string
   data: T
 }
+
+export type Xiaomai = {
+  Chr: string
+  Start: number
+  End: number
+  Length: number
+  Prob: number
+  result: string
+}

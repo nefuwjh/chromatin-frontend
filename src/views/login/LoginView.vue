@@ -22,7 +22,7 @@ const loginF = () => {
         setTimeout(() => {
           dialogFormVisible.value = false
           load.close()
-          router.push('/main')
+          router.push('/main/species/Zea_mays')
           ElMessage({ type: 'success', message: '登录成功' })
         }, 1500)
       }

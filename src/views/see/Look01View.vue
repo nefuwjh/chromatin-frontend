@@ -13,10 +13,10 @@ onMounted(() => {
 
     const option1 = {
       grid: {
-        width: '68%', // 设置图表宽度为容器宽度的70%
-        height: '65%', // 设置图表高度为容器高度的70%
-        left: '8%', // 调整图表在容器中的位置
-        top: '15%',
+        width: '70%', // 设置图表宽度为容器宽度的70%
+        height: '80%', // 设置图表高度为容器高度的70%
+        left: '10%', // 调整图表在容器中的位置
+        top: '20%',
         containLabel: true // 是否包含坐标轴标签
       },
       toolbox: {
@@ -39,8 +39,12 @@ onMounted(() => {
           'Oryza sativa',
           'Solanum lycopersicum',
           'Arabidopsis thaliana'
-        ]
+        ],
+        axisLabel: {
+          rotate: 30, // 旋转角度为 -45 度
+        },
       },
+      
       yAxis: {
         type: 'value',
         axisLabel: {
@@ -50,7 +54,7 @@ onMounted(() => {
       },
       series: [
         {
-          data: [92, 80, 70, 60, 94, 50, 30],
+          data: [87, 90, 85, 89, 94, 85, 93],
           type: 'bar',
           showBackground: true,
           color: '#2486b9',

@@ -12,7 +12,7 @@ onMounted(() => {
 
     const option1 = {
       title: {
-        text: 'MNase-seq',
+        text: 'ATAC-seq',
         left: 'center'
       },
       grid: {

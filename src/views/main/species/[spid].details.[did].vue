@@ -7,7 +7,7 @@ import Look03View from '@/views/main/see/Look03View.vue'
 import Look04View from '@/views/main/see/Look04View.vue'
 import Look05View from '@/views/main/see/Look05View.vue'
 import Look06View from '@/views/main/see/Look06View.vue'
-
+import { Promotion } from '@element-plus/icons-vue'
 let currentPage = ref(1)
 let pageSize = 10
 const handleCurrentChange = (val: number): void => {
@@ -27,6 +27,9 @@ watch(currentPage, () => {
 updateCurrentPageData()
 </script>
 <template>
+  <a href="http://localhost:3000 " style="outline: none;">
+  <el-button type="primary" :icon="Promotion" circle></el-button>
+</a>
   <el-table
     :data="currentPageData"
     :default-sort="

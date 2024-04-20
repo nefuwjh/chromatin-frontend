@@ -158,66 +158,66 @@ export const tableData: PredictioInfo[] = [
     status: 1
   },
   {
-    spid: 'Hordeum_vulgare',
+    spid: 'Triticum_aestivum',
     id: '1598746215698745318',
-    sequence: 'Hordeum_vulgare_root_20240419',
+    sequence: 'Triticum_aestivum_root_20240419',
     time: '2024-04-19 15:44:50',
     count: 10,
-    desc: '3号大麦样本一些感兴趣的区间',
+    desc: '3号小麦样本一些感兴趣的区间',
     status: 1
   },
   {
-    spid: 'Hordeum_vulgare',
+    spid: 'Triticum_aestivum',
     id: '1598746215698745328',
-    sequence: 'Hordeum_vulgare_leaf_20240419',
+    sequence: 'Triticum_aestivum_leaf_20240419',
     time: '2024-04-19 15:37:42',
     count: 5,
-    desc: '8号大麦样本，大麦叶xx性状调控的相关基因区间',
+    desc: '8号小麦样本，大麦叶xx性状调控的相关基因区间',
     status: 1
   },
   {
-    spid: 'Hordeum_vulgare',
+    spid: 'Triticum_aestivum',
     id: '1598746215698741328',
-    sequence: 'Hordeum_vulgare_leaf_20240419',
+    sequence: 'Triticum_aestivum_leaf_20240419',
     time: '2024-04-19 15:35:55',
     count: 8,
-    desc: '24号大麦样本，大麦叶xx性状调控的相关基因区间',
+    desc: '24号小麦样本，大麦叶xx性状调控的相关基因区间',
     status: 1
   },
   {
-    spid: 'Hordeum_vulgare',
+    spid: 'Triticum_aestivum',
     id: '1598746215698841328',
-    sequence: 'Hordeum_vulgare_leaf_20240419',
+    sequence: 'Triticum_aestivum_leaf_20240419',
     time: '2024-04-19 15:22:48',
     count: 5,
-    desc: '11号大麦样本，大麦叶xx性状调控的相关基因区间',
+    desc: '11号小麦样本，大麦叶xx性状调控的相关基因区间',
     status: 1
   },
   {
-    spid: 'Hordeum_vulgare',
+    spid: 'Triticum_aestivum',
     id: '1598746215698841328',
-    sequence: 'Hordeum_vulgare_flower_20240417',
+    sequence: 'Triticum_aestivum_flower_20240417',
     time: '2024-04-17 09:25:30',
     count: 5,
-    desc: '5号大麦样本一些感兴趣的区间',
+    desc: '5号小麦样本一些感兴趣的区间',
     status: 1
   },
   {
-    spid: 'Hordeum_vulgare',
+    spid: 'Triticum_aestivum',
     id: '1598746215698841328',
-    sequence: 'Hordeum_vulgare_root_20240417',
+    sequence: 'Triticum_aestivum_root_20240417',
     time: '2024-04-17 09:18:34',
     count: 4,
-    desc: '9号大麦样本，大麦根部xx性状调控的相关基因区间',
+    desc: '9号小麦样本，小麦根部xx性状调控的相关基因区间',
     status: 1
   },
   {
-    spid: 'Hordeum_vulgare',
+    spid: 'Triticum_aestivum',
     id: '1598746215698841328',
-    sequence: 'Hordeum_vulgare_root_20240413',
+    sequence: 'Triticum_aestivum_root_20240413',
     time: '2024-04-13 21:40:50',
     count: 9,
-    desc: '17号大麦样本，大麦根部xx性状调控的相关基因区间',
+    desc: '17号小麦样本，小麦根部xx性状调控的相关基因区间',
     status: 1
   },
   {

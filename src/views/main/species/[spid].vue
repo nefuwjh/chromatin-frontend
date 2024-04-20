@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { PredictioInfo } from '@/type'
-import { Search, Tools, UploadFilled, SuccessFilled, DeleteFilled } from '@element-plus/icons-vue'
+import { Search, View, UploadFilled, SuccessFilled, DeleteFilled } from '@element-plus/icons-vue'
 import AddBed from './AddBed.vue'
 import { listPredictionResults } from '@/data'
 import { showDistributeDialog } from './distribute'
@@ -59,7 +59,7 @@ const iconSize = 18
               <template v-if="(scope.row as PredictioInfo).status! > 0">
                 <RouterLink
                   :to="`/main/species/${spidR}/details/${(scope.row as PredictioInfo).id}`">
-                  <el-icon :size="iconSize"><Tools /></el-icon>
+                  <el-icon :size="iconSize" color="#3F9EFD"><View /></el-icon>
                 </RouterLink>
               </template>
             </span>
@@ -77,7 +77,11 @@ const iconSize = 18
       </el-table>
     </el-col>
     <el-col style="margin-top: 5px">
-      <el-pagination background layout="prev, pager, next" :page-size="10" :total="100" />
+      <el-pagination
+        background
+        layout="prev, pager, next"
+        :page-size="2"
+        :total="resultsR.length" />
     </el-col>
   </el-row>
 </template>

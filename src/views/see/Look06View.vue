@@ -1,58 +1,184 @@
 <script setup lang="ts">
 import * as echarts from 'echarts'
 import { onMounted, ref } from 'vue'
+
 const echartsInstance = ref<echarts.ECharts | null>(null)
 const boxRef1 = ref<HTMLDivElement | null>(null)
+
 onMounted(() => {
-  // 初始化 echarts 实例
   const container1 = boxRef1.value
-  console.log('test==', boxRef1.value)
   if (container1) {
     echartsInstance.value = echarts.init(container1)
-    // 在这里可以根据需要配置 echarts 实例
 
     const option1 = {
       title: {
-        text: 'Faire-seq',
+        text: 'FAIRE-seq',
         left: 'center'
       },
       grid: {
-        width: '68%', // 设置图表宽度为容器宽度的70%
-        height: '65%', // 设置图表高度为容器高度的70%
-        left: '8%', // 调整图表在容器中的位置
+        width: '100%',
+        height: '50%',
+        left: '0%',
         top: '15%',
-        containLabel: true // 是否包含坐标轴标签
-      },
-      toolbox: {
-        feature: {
-          dataView: {},
-          restore: {},
-          saveAsImage: {}
-        }
-      },
-      tooltip: {
-        trigger: 'item'
+        containLabel: true
       },
       xAxis: {
-        type: 'category',
-        data: ['大麦', '小麦', '高粱', '玉米', '水稻', '番茄', '拟南芥']
+        data: Array.from({ length: 140 }, (_, i) => i + 1),
+        axisLabel: {
+          show: false
+        }
       },
       yAxis: {
-        type: 'value',
+        max: 10, // 设置 y 轴最大值为 10
         axisLabel: {
-          formatter: '{value}%' //设置为百分数
-        },
-        max: 100
+          show: false
+        }
       },
       series: [
         {
-          data: [92, 80, 70, 60, 70, 10, 30],
+          data: [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
           type: 'bar',
-          showBackground: true,
-          color: '#2486b9',
-          backgroundStyle: {
-            color: 'rgba(180, 180, 180, 0.2)'
-          }
+          showBackground: false, // 关闭柱子背景
+          color: 'orange',
+          barWidth: 10,
+          barGap: '10%' // 调整柱状图之间的间距
         }
       ]
     }
@@ -69,17 +195,18 @@ onMounted(() => {
 
 <style scoped>
 .echart-box {
-  width: 515px;
-  height: 200px;
-  margin-top: 35px;
-  margin-left: 40px;
+  width: 1150px;
+  height: 180px;
+  margin-top: 45px;
+  margin-left: 30px; /* 居中 */
+  margin-right: auto; /* 居中 */
   display: inline-block;
   background-color: white;
   border-radius: 3%;
-  border: 1px solid #ccc; /* 灰色边框 */
-  transition: box-shadow 0.3s; /* 添加过渡效果 */
+  border: 1px solid #ccc;
+  transition: box-shadow 0.3s;
 }
 .echart-box:hover {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* 阴影效果 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 </style>

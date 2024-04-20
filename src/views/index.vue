@@ -38,21 +38,18 @@ import Look07View from './see/Look07View.vue'
       </el-col>
     </el-row>
     <el-row class="row-02">
-      <el-col :span="10" class="row-02">
-        <Look04View></Look04View>
-      </el-col>
-      <el-col :span="10" class="row-02">
-        <Look05View></Look05View>
-      </el-col>
+      <Look04View></Look04View>
     </el-row>
-    <el-row class="row-03">
-      <el-col :span="10" class="row-03">
-        <Look06View></Look06View>
-      </el-col>
-      <el-col :span="10" class="row-03">
-        <Look07View></Look07View>
-      </el-col>
+    <el-row class="row-02">
+      <Look05View></Look05View>
     </el-row>
+    <el-row class="row-02">
+      <Look06View></Look06View>
+    </el-row>
+    <el-row class="row-02">
+      <Look07View></Look07View>
+    </el-row>
+
     <el-backtop :right="100" :bottom="100" style="box-shadow: 7px 7px 14px #162d81db" />
   </main>
 </template>

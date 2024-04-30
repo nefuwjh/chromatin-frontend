@@ -2,22 +2,25 @@
 import type { PredictioInfo } from '@/type'
 import { Search, View, UploadFilled, SuccessFilled, DeleteFilled } from '@element-plus/icons-vue'
 import AddBed from './AddBed.vue'
-import { listPredictionResults } from '@/data'
 import { showDistributeDialog } from './distribute'
 import { createDelConfirmDialog } from './delete'
+import { getResultsService } from '@/service'
 
 const route = useRoute()
 const spidR = ref('')
 const resultsR = ref<PredictioInfo[]>([])
+const results = ref<PredictioInfo[]>([])
+
+results.value = await getResultsService()
 watch(
   route,
-  () => {
+  async () => {
+    results.value = await getResultsService()
     spidR.value = (route.params as any).spid
-    resultsR.value = listPredictionResults().filter((item) => item.spid === spidR.value)
+    resultsR.value = results.value.filter((item) => item.spid === spidR.value)
   },
   { immediate: true }
 )
-
 const iconSize = 18
 </script>
 <template>

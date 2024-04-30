@@ -12,10 +12,7 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
 <template>
   <div id="tabs">
     <el-tabs v-model="activeName" stretch class="demo-tabs" @tab-click="handleClick">
-      <el-tab-pane
-        label="Hordeum vulgare
-            "
-        name="first">
+      <el-tab-pane label="&nbsp Hordeum vulgare &nbsp" name="first">
         <div>
           <img src="@/assets/damai.jpg" alt="" />
           <p>
@@ -27,9 +24,8 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
             mainly divided into two varieties of highland barley and Tibetan highland barley.
           </p>
         </div>
-        <router-link to="/barley"></router-link>
       </el-tab-pane>
-      <el-tab-pane label="Triticum aestivum">
+      <el-tab-pane label="&nbsp Triticum aestivum &nbsp">
         <div>
           <img src="@/assets/xiaomai.jpg" alt="" />
           <p>
@@ -40,9 +36,8 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
             May to July.
           </p>
         </div>
-        <router-link to="/barley"></router-link>
       </el-tab-pane>
-      <el-tab-pane label="Sorghum bicolor Moench">
+      <el-tab-pane label="&nbsp Sorghum bicolor Moench &nbsp">
         <div>
           <img src="@/assets/gaoliang.jpg" alt="" />
           <p>
@@ -55,9 +50,8 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
             period 6-9 months.
           </p>
         </div>
-        <router-link to="/barley"></router-link>
       </el-tab-pane>
-      <el-tab-pane label="Zea mays">
+      <el-tab-pane label="&nbsp Zea mays &nbsp">
         <div>
           <img src="@/assets/yumi.jpg" alt="" />
           <p>
@@ -68,9 +62,8 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
             Inflorescence monoecious; The seeds are often yellow, white, and purple.
           </p>
         </div>
-        <router-link to="/barley"></router-link>
       </el-tab-pane>
-      <el-tab-pane label="Oryza sativa">
+      <el-tab-pane label="&nbsp Oryza sativa &nbsp">
         <div>
           <img src="@/assets/shuidao1.jpg" alt="" />
           <p>
@@ -81,9 +74,8 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
             Spikelet contains 1 mature flower.
           </p>
         </div>
-        <router-link to="/barley"></router-link>
       </el-tab-pane>
-      <el-tab-pane label="Solanum lycopersicum">
+      <el-tab-pane label="&nbsp Solanum lycopersicum &nbsp">
         <div>
           <img src="@/assets/fanqie.jpg" alt="" />
           <p>
@@ -92,9 +84,8 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
             hard-to-crack fruits. Tomato stems are prone to lodging.
           </p>
         </div>
-        <router-link to="/barley"></router-link>
       </el-tab-pane>
-      <el-tab-pane label="Arabidopsis thaliana">
+      <el-tab-pane label="&nbsp Arabidopsis thaliana &nbsp">
         <div>
           <img src="@/assets/ninanjie.jpg" alt="" />
           <p>
@@ -105,7 +96,6 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
             lanceolate, striate, oblong, or elliptic.
           </p>
         </div>
-        <router-link to="/barley"></router-link>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -143,27 +133,27 @@ p {
   margin: 10px;
 }
 /* 去除灰色横条 */
-:v-deep .el-tabs__nav-wrap::after {
+::v-deep .el-tabs__nav-wrap::after {
   position: static !important;
 }
 /* 设置滑块颜色 */
-:v-deep .el-tabs__active-bar {
+::v-deep .el-tabs__active-bar {
   background-color: #538fff !important;
 }
 /* 设置滑块停止位置 */
-:v-deep .el-tabs__active-bar.is-top {
+::v-deep .el-tabs__active-bar.is-top {
   height: 37px;
   border-radius: 17px;
   top: 0px !important;
 }
 /* 设置当前选中样式 */
-:v-deep .el-tabs__item.is-active {
+::v-deep .el-tabs__item.is-active {
   color: #ffffff !important;
   z-index: 2;
   /* border: 1px solid red; */
 }
 /* 设置未被选中样式 */
-:v-deep .el-tabs__item {
+::v-deep .el-tabs__item {
   padding: 0 20px !important;
   color: hsl(0, 0%, 4%) !important;
 }

@@ -125,6 +125,7 @@ const submitF = () => {
   }, returnTimes)
   dialogFormVisible.value = false
   bedInfoR.value = {}
+  bedFileInfoR.value = { lines: 0, gens: '' }
 }
 </script>
 <template>

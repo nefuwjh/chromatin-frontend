@@ -40,8 +40,7 @@ export type Xiaomai = {
   result: string
 }
 
-export interface ResultVO<T> {
-  code: number
-  message?: string
-  data: T
+export interface AddMessage {
+  prediction?: PredictioInfo
+  file?: string
 }

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { Plus } from '@element-plus/icons-vue'
 import { listSpeciesPart, tableData } from '@/data'
-import type { PredictionBed, PredictioInfo } from '@/type'
+import type { PredictionBed, PredictioInfo, AddMessage } from '@/type'
 import router from '@/router'
 import { createElLoading } from '@/components/loading'
+import { addService } from '@/service'
 const route = useRoute()
 const dialogFormVisible = ref(false)
 const openDialogF = async () => {
@@ -18,6 +19,21 @@ const bedInfoR = ref<PredictionBed>({})
 const fileContentR = ref({ content: '' })
 
 const bedFileInfoR = ref({ lines: 0, gens: '' })
+
+const prediction = ref<PredictioInfo>({
+  spid: '',
+  id: '',
+  sequence: '',
+  count: 0,
+  desc: '',
+  status: 0
+})
+
+const addMessage = ref<AddMessage>({
+  prediction: undefined,
+  file: ''
+})
+
 //
 const changeF = async (event: Event) => {
   const element = event.target as HTMLInputElement
@@ -35,8 +51,9 @@ const changeF = async (event: Event) => {
   bedFileInfoR.value.lines = rows.length
   bedFileInfoR.value.gens = [...gens].join(', ')
   fileContentR.value.content = result
-  //console.log(fileContentR.value)
-  //console.log(JSON.stringify(fileContentR.value))
+  // console.log('fileContentR.value', fileContentR.value)
+  // console.log('JSON.stringify(fileContentR.value)', JSON.stringify(fileContentR.value))
+  addMessage.value.file = JSON.stringify(fileContentR.value)
 }
 
 const readFile = (file: Blob) => {
@@ -74,15 +91,6 @@ const getTime = () => {
   return yy + '-' + mm + '-' + dd + ' ' + hh + ':' + mf + ':' + ss
 }
 
-const prediction = ref<PredictioInfo>({
-  spid: '',
-  id: '',
-  sequence: '',
-  count: 0,
-  desc: '',
-  status: 0
-})
-
 // 预测信息返回成功弹出信息框，秒
 const returnTimes = 1000 * 15
 
@@ -95,13 +103,14 @@ const submitF = () => {
   prediction.value.id = '1598746215698841328'
   prediction.value.count = 3
   prediction.value.sequence = spid + '_' + bedInfoR.value.part + '_' + getDate()
-  console.log(prediction.value)
+  addMessage.value.prediction = prediction.value
+  // console.log('addMessage', addMessage.value)
 
   const loading = createElLoading()
-  setTimeout(() => {
+  setTimeout(async () => {
     loading.close()
-    tableData.unshift(JSON.parse(JSON.stringify(prediction.value)))
-    console.log(tableData)
+    await addService(addMessage.value)
+    // console.log(tableData)
     ElNotification({
       title: 'Success',
       message: 'Browser extensible data been posted.',

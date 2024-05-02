@@ -8,7 +8,7 @@ export const getResultsService = async () => {
 }
 
 export const addService = async (addMessage: AddMessage) => {
-  const resp = await usePost<{ addMessage: AddMessage }>('add', addMessage)
+  const resp = await usePost<{ addMessage: AddMessage }>('file/upload/predict', addMessage)
   const token = resp.response.value?.headers.get('token')
   token && sessionStorage.setItem('token', token)
 }

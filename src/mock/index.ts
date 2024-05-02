@@ -12,12 +12,23 @@ server.get('results', () => {
   return resultVO
 })
 
-server.post('add', (_schema, request) => {
-  const { prediction, file } = JSON.parse(request.requestBody)
-  // console.log('prediction:', prediction, 'file:', file)
+server.post('file/upload/predict', (_schema, request) => {
+  const { plantId, tissue, description, chrNum, bedString } = JSON.parse(request.requestBody)
+  console.log(
+    'plantId:',
+    plantId,
+    'tissue:',
+    tissue,
+    'description',
+    description,
+    'chrNum',
+    chrNum,
+    'bedString',
+    bedString
+  )
   const resultVO: ResultVO<{}> = { code: 200, data: {} }
-  if (file) {
-    tableData.unshift(prediction)
+  if (plantId) {
+    // tableData.unshift(prediction)
     return new Response(
       200,
       {

@@ -41,6 +41,9 @@ export type Xiaomai = {
 }
 
 export interface AddMessage {
-  prediction?: PredictioInfo
-  file?: string
+  plantId?: string
+  tissue?: string
+  description?: string
+  chrNum?: string
+  bedString?: string
 }

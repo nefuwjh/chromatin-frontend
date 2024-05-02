@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Plus } from '@element-plus/icons-vue'
-import { listSpeciesPart, tableData } from '@/data'
-import type { PredictionBed, PredictioInfo, AddMessage } from '@/type'
+import { listSpecies, listSpeciesPart, tableData } from '@/data'
+import type { PredictionBed, AddMessage } from '@/type'
 import router from '@/router'
 import { createElLoading } from '@/components/loading'
 import { addService } from '@/service'
@@ -20,19 +20,7 @@ const fileContentR = ref({ content: '' })
 
 const bedFileInfoR = ref({ lines: 0, gens: '' })
 
-const prediction = ref<PredictioInfo>({
-  spid: '',
-  id: '',
-  sequence: '',
-  count: 0,
-  desc: '',
-  status: 0
-})
-
-const addMessage = ref<AddMessage>({
-  prediction: undefined,
-  file: ''
-})
+const addMessage = ref<AddMessage>({})
 
 //
 const changeF = async (event: Event) => {
@@ -52,8 +40,10 @@ const changeF = async (event: Event) => {
   bedFileInfoR.value.gens = [...gens].join(', ')
   fileContentR.value.content = result
   // console.log('fileContentR.value', fileContentR.value)
-  // console.log('JSON.stringify(fileContentR.value)', JSON.stringify(fileContentR.value))
-  addMessage.value.file = JSON.stringify(fileContentR.value)
+  // console.log('JSON.stringify(fileContentR.value)', JSON.stringify(fileContentR.value.content))
+  const num = [...gens].length - 1
+  addMessage.value.chrNum = num.toString()
+  addMessage.value.bedString = JSON.stringify(fileContentR.value.content)
 }
 
 const readFile = (file: Blob) => {
@@ -72,39 +62,16 @@ const activeF = () => {
   })
 }
 
-const getDate = () => {
-  let yy = new Date().getFullYear()
-  let mm =
-    new Date().getMonth() + 1 < 10 ? '0' + (new Date().getMonth() + 1) : new Date().getMonth() + 1
-  let dd = new Date().getDate() < 10 ? '0' + (new Date().getDate() + 1) : new Date().getDate() + 1
-  return '' + yy + mm + dd
-}
-
-const getTime = () => {
-  let yy = new Date().getFullYear()
-  let mm =
-    new Date().getMonth() + 1 < 10 ? '0' + (new Date().getMonth() + 1) : new Date().getMonth() + 1
-  let dd = new Date().getDate() < 10 ? '0' + (new Date().getDate() + 1) : new Date().getDate() + 1
-  let hh = new Date().getHours() < 10 ? '0' + new Date().getHours() : new Date().getHours()
-  let mf = new Date().getMinutes() < 10 ? '0' + new Date().getMinutes() : new Date().getMinutes()
-  let ss = new Date().getSeconds() < 10 ? '0' + new Date().getSeconds() : new Date().getSeconds()
-  return yy + '-' + mm + '-' + dd + ' ' + hh + ':' + mf + ':' + ss
-}
-
 // 预测信息返回成功弹出信息框，秒
 const returnTimes = 1000 * 15
 
 const submitF = () => {
   const spid = (route.params as any).spid as string
-  prediction.value.spid = spid
-  prediction.value.status = 0
-  prediction.value.time = getTime()
-  prediction.value.desc = bedInfoR.value.desc
-  prediction.value.id = '1598746215698841328'
-  prediction.value.count = 3
-  prediction.value.sequence = spid + '_' + bedInfoR.value.part + '_' + getDate()
-  addMessage.value.prediction = prediction.value
-  // console.log('addMessage', addMessage.value)
+  addMessage.value.plantId = listSpecies()
+    .find((item) => item.name === spid)
+    ?.id.toString()
+  addMessage.value.description = bedInfoR.value.desc
+  addMessage.value.tissue = bedInfoR.value.part
 
   const loading = createElLoading()
   setTimeout(async () => {
